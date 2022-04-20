@@ -39,8 +39,8 @@ def make_huffman_tree(f):
       y = p.get(1)
       #print(x.data[1])
       #print(y.data[0])
-      x.data[1] = '0'
-      y.data[1] = '1'
+      #x.data[1] = '0'
+      #y.data[1] = '1'
       z = TreeNode(x, y, (x.data[0] + y.data[0], ""))
       
 
