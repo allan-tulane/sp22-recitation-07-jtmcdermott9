@@ -75,11 +75,9 @@ def fixed_length_cost(f):
   freq = f
   words = len(freq.keys())
   bit_len = math.ceil(math.log(words, 2))
-  
   file_len = 0
   for i in freq.values():
     file_len += i
-    print(i)
   cost = bit_len * file_len
 
 
