@@ -75,9 +75,11 @@ def fixed_length_cost(f):
   freq = f
   words = len(freq.keys())
   bit_len = math.ceil(math.log(words, 2))
+  
   file_len = 0
   for i in freq.values():
     file_len += i
+    print(i)
   cost = bit_len * file_len
 
 
@@ -104,9 +106,24 @@ f4 = get_frequencies('fields.c')
 
 
 print("Fixed-length cost:  %d" % fixed_length_cost(f))
+print("Fixed-length cost:  %d" % fixed_length_cost(f2))
+print("Fixed-length cost:  %d" % fixed_length_cost(f3))
+print("Fixed-length cost:  %d" % fixed_length_cost(f4))
+
 print( '\n'*2)
 T = make_huffman_tree(f)
 
+T2 = make_huffman_tree(f2)
+T3 = make_huffman_tree(f3)
+T4 = make_huffman_tree(f4)
+
 C = get_code(T)
+C2 = get_code(T2)
+C3 = get_code(T3)
+C4 = get_code(T4)
+
 
 print("Huffman cost:  %d" % huffman_cost(C, f))
+print("Huffman cost:  %d" % huffman_cost(C2, f2))
+print("Huffman cost:  %d" % huffman_cost(C3, f3))
+print("Huffman cost:  %d" % huffman_cost(C4, f4))
